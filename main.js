@@ -1,12 +1,14 @@
+// Correction exercice 3 (par le prof)
 //const helloWorld = React.createElement('h1', {}, 'Hello world!');
 
+/*
 const firstName = 'r0ulito';
 const lastName = 'formateur';
 
 
 // Solution sans bonus
 const helloWorld = <h1>Hello <span>{firstName[0].toUpperCase() + firstName.slice(1)}</span> <span className="red-text">{lastName.toUpperCase()}</span></h1>;
-
+*/
 
 
 /**
@@ -28,5 +30,53 @@ const helloWorld = <h1>Hello <span>{firstName[0].toUpperCase() + firstName.slice
  );
 
  */
+
+// Exercice 3 (par moi)
+
+// Version 1
+/*
+const lastName = React.createElement('span', {className : "red"}, "EAR");
+console.log(lastName);
+
+const firstName = React.createElement('span', {className : "upper"}, 'Sophie');
+console.log(firstName);
+
+const element = (
+	<div>
+		{lastName} {firstName}
+	</div>
+);
+*/
+
+
+// Version 2
+/*const firstName = "sophie";
+const lastName = "ear";
+
+const element = (
+	<div>
+		<span className="red">{lastName} </span>
+		<span className="upper">{firstName}</span>
+	</div>
+);*/
+
+const firstName = <FirstName name="sophie" />;
+const lastName = <LastName name="ear" />;
+
+function FirstName(props) {
+	return 
+}
+const formatFirstName = (value) => value[0].toUpperCase() + value.slice(1);
+const formatLastName = (value) => value.toUpperCase();
+
+const helloWorld = (
+  <h1>
+	Hello <span>{formatFirstName(firstName)}</span>{" "}
+	<span className="red-text">{formatLastName(lastName)}</span>
+  </h1>
+);
+
+<LastName />
+
 
 ReactDOM.render(helloWorld, document.querySelector('#app'));
