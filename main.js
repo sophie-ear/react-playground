@@ -60,23 +60,25 @@ const element = (
 	</div>
 );*/
 
+
+
+function FirstName(props) {
+	return <span>{props.name[0].toUpperCase() + props.name.slice(1)} </span>;
+}
+
+function LastName(props) {
+	return <span className="red-text">{props.name.toUpperCase()} </span>;
+}
+
 const firstName = <FirstName name="sophie" />;
 const lastName = <LastName name="ear" />;
 
-function FirstName(props) {
-	return 
-}
-const formatFirstName = (value) => value[0].toUpperCase() + value.slice(1);
-const formatLastName = (value) => value.toUpperCase();
-
-const helloWorld = (
-  <h1>
-	Hello <span>{formatFirstName(firstName)}</span>{" "}
-	<span className="red-text">{formatLastName(lastName)}</span>
-  </h1>
+const element = (
+	<p>
+		{firstName} {lastName}
+	</p>
 );
 
-<LastName />
+ReactDOM.render(element, document.querySelector('#app'));
 
 
-ReactDOM.render(helloWorld, document.querySelector('#app'));
