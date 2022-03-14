@@ -66,8 +66,19 @@ function FirstName(props) {
 	return <span>{props.name[0].toUpperCase() + props.name.slice(1)} </span>;
 }
 
-function LastName(props) {
+/*function LastName(props) {
 	return <span className="red-text">{props.name.toUpperCase()} </span>;
+}*/
+
+class LastName extends React.Component {
+
+	constructor(props) {
+		super(props);
+	}
+
+	render() {
+		return <span className="red-text">{this.props.name.toUpperCase()} </span>;
+	}
 }
 
 const firstName = <FirstName name="sophie" />;
