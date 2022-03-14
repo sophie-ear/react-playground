@@ -16,4 +16,5 @@ ReactDOM.render(helloWorld, document.querySelector('#app'));
 
 const titre = 'Hello World 2';
 const element = <h1>{titre}</h1>;
-ReactDOM.render(element, document.querySelector('#app'));
+const element2 = <h1>Hello World 3</h1>;
+ReactDOM.render(element2, document.querySelector('#app'));
