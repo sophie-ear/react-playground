@@ -101,6 +101,10 @@ class LastName extends React.Component {
 		}, 5000)
 	}
 
+	componentDidUpdate() {
+		console.log("updated");
+	}
+
 	componentWillUpdate() {
 		console.log("update in progress");
 	}
