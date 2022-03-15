@@ -18,6 +18,13 @@ function FirstName(props) {
 
 function LastName(props) {
 
+	// test vaut "rien"
+	const [test, setTest] = React.useState('rien');
+	// après 2sec test vaut "quelque chose"
+	setTimeout( () => {
+		setTest('quelque chose')
+	}, 2000);
+
     /*
     // Solution avec bonus
     const formatLastName = (lastName) => {
@@ -28,14 +35,40 @@ function LastName(props) {
     */
 
     // Solution sans bonus
-    return <span className="red-text">{props.text.toUpperCase()}</span>
+    return <span className="red-text">{props.text.toUpperCase()} {props.year}</span>
 
 }
 
-const helloWorld = <h1>Hello <FirstName text={firstName}/> <LastName text={lastName}/></h1>;
+const helloWorld = <h1>Hello <FirstName text={firstName}/> <LastName2 text={lastName} year="2022" /></h1>;
 
+
+function LastName2({text, year}) {
+
+	// test vaut "rien"
+	const [test, setTest] = React.useState('rien');
+	// après 2sec test vaut "quelque chose"
+	setTimeout( () => {
+		setTest('quelque chose')
+	}, 2000);
+
+    /*
+    // Solution avec bonus
+    const formatLastName = (lastName) => {
+        return lastName.toUpperCase();
+    }
+
+    return <span>{formatLastName(props.text)}</span>
+    */
+
+    // Solution sans bonus
+    return <span className="red-text">{text.toUpperCase()} {year}</span>
+
+}
+
+const helloWorld2 = <h1>Hello <FirstName text={firstName}/> <LastName2 text={lastName} year="2022" /></h1>;
 
 //ReactDOM.render(helloWorld, document.querySelector('#app'));
+ReactDOM.render(helloWorld2, document.querySelector('#app'));
 
 
 class Clock extends React.Component {
@@ -69,6 +102,17 @@ class Clock extends React.Component {
 			</div>
 		);
 	}
+}
+
+function Clock(props) {
+	render() {
+		return (
+			<div>
+				<h1>Hello, world!</h1>
+				<h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+			</div>
+		);
+	};
 }
 
 ReactDOM.render(
