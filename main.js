@@ -74,10 +74,39 @@ class LastName extends React.Component {
 
 	constructor(props) {
 		super(props);
+		this.state = {
+			styleObject : {}
+		}
+	}
+
+	componentWillMount() {
+		setTimeout(() => {
+			this.setState({
+				styleObject : {
+					backgroundColor: "teal",
+				}
+			})
+		}, 3000)
+		
+		// mounted
+	}
+
+	componentDidMount() {
+		setTimeout(() => {
+			this.setState({
+				styleObject : {
+					backgroundColor: "white",
+				}
+			})
+		}, 5000)
+	}
+
+	componentWillUpdate() {
+		console.log("update in progress");
 	}
 
 	render() {
-		return <span className="red-text">{this.props.name.toUpperCase()} </span>;
+		return <span style={this.state.styleObject} className="red-text">{this.props.name.toUpperCase()} </span>;
 	}
 }
 
