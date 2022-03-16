@@ -95,12 +95,7 @@ function Clock(props) {
             <h1>Hello world</h1>
             <h2>Il est {date.toLocaleTimeString()}.</h2>
         </div>
-        );
+    );
 }
 
 ReactDOM.render(<Clock />, document.querySelector('#app'));
-
-
-
-
-
