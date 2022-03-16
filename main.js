@@ -105,14 +105,13 @@ class Clock extends React.Component {
 }
 
 function Clock(props) {
-	render() {
 		return (
 			<div>
 				<h1>Hello, world!</h1>
 				<h2>It is {this.state.date.toLocaleTimeString()}.</h2>
 			</div>
 		);
-	};
+	
 }
 
 ReactDOM.render(
