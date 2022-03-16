@@ -1,3 +1,4 @@
+/*
 function Clock(props) {
     React.useEffect(() => {
         tick();
@@ -34,17 +35,18 @@ function Clock(props) {
     }
     
 
-/*     return (
+    return (
         <div>
             <h1>Hello world</h1>
             <h2 style={{color: textColor}}>Il est {date.toLocaleTimeString()}.</h2>
             <button onClick={changeColor}>Changer couleur</button>
             <button onClick={resetColor}>Réinitialiser couleur</button>
         </div>
-        ); */
+        ); 
+*/
 
         // Solution Bonus
-
+/*
         return (
             <div>
                 <h1>Hello world</h1>
@@ -57,7 +59,46 @@ function Clock(props) {
 
 ReactDOM.render(<Clock />, document.querySelector('#app'));
 
+*/
+
+function UserGreeting(props) {
+	return <h1>Bienvenue !</h1>;
+}
+
+function GuestGreeting(props) {
+	return <h1>Veuillez vous inscrire.</h1>;
+}
+
+function Greeting(props) {
+	const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+	
+	/* if (isLoggedIn) {
+	return <UserGreeting />;
+	}
+	return <GuestGreeting />; */
+
+	const toggleIsLoggedIn = () => {
+
+		// fonction anonyme très raccourcie
+		setIsLoggedIn( prevState =>  !prevState);
+		
+	}
+
+	return (
+		// on n'a pas importé React donc on doit l'appeler, ensuite ça sera juste <> </>
+		<React.Fragment>
+			{
+				isLoggedIn ? <UserGreeting /> : <GuestGreeting />
+			}
+			<button onClick={ toggleIsLoggedIn }>click</button>
+		</React.Fragment>
+	)
+}
 
 
-
+ReactDOM.render(
+	// Essayez de changer ça vers isLoggedIn={true} :
+	<Greeting isLoggedIn={false} />,
+	document.getElementById('app')
+);
 
